@@ -9,7 +9,7 @@ package hoja6;
  *
  * @author Ma. Belen
  */
-public class Desarrollador {
+public class Desarrollador{
     /*esta clase guarda la informacion de cada desarrollador*/
     String nombre;
     int[] conjuntos= new int[3];

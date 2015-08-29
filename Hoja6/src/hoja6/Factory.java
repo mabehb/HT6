@@ -25,7 +25,7 @@ public class Factory {
             implementacion= new LinkedHashSet<Desarrollador>();
         }
         if (eleccion ==3){
-            implementacion= new TreeSet<Desarrollador>();
+            implementacion= new TreeSet<Desarrollador>(new ComparadorNombre());
         }
         return implementacion;
     }
