@@ -6,6 +6,8 @@
 package hoja6;
 
 import java.util.AbstractSet;
+import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 
@@ -34,6 +36,9 @@ public class SETGUI extends javax.swing.JPanel {
     int conjunto1;
     int conjunto2;
     int conjunto3;
+    String nombre;
+    ArrayList<String> nombres;
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -48,7 +53,6 @@ public class SETGUI extends javax.swing.JPanel {
         botonContinuar = new javax.swing.JButton();
         jInternalFrame2 = new javax.swing.JInternalFrame();
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -57,6 +61,27 @@ public class SETGUI extends javax.swing.JPanel {
         celCB = new javax.swing.JCheckBox();
         botonRegistrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea6 = new javax.swing.JTextArea();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -114,15 +139,11 @@ public class SETGUI extends javax.swing.JPanel {
 
         jInternalFrame1.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 350, 310));
 
-        add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 400));
+        add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 500, 400));
 
         jInternalFrame2.setVisible(true);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
-        jLabel3.setText("Desarrolladores");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 38, -1, -1));
 
         jLabel4.setText("Ingrese el nombre del desarrollador:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 92, -1, -1));
@@ -152,10 +173,22 @@ public class SETGUI extends javax.swing.JPanel {
                 botonRegistrarActionPerformed(evt);
             }
         });
-        jPanel1.add(botonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 259, -1, -1));
+        jPanel1.add(botonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 110, -1));
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 12, 321, 17));
+
+        jButton1.setText("Resultados");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
+        jLabel9.setText("Desarrolladores");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 38, -1, -1));
 
         javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
         jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
@@ -167,10 +200,68 @@ public class SETGUI extends javax.swing.JPanel {
             jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame2Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 31, Short.MAX_VALUE))
+                .addGap(0, 30, Short.MAX_VALUE))
         );
 
-        add(jInternalFrame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 390, 360));
+        add(jInternalFrame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 390, 360));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 90, -1, 610));
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, 610));
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane3.setViewportView(jTextArea3);
+
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 610));
+
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        jScrollPane4.setViewportView(jTextArea4);
+
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, 610));
+
+        jLabel7.setText("grupo más grande");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 60, -1, -1));
+
+        jLabel8.setText("Java, Web y Celulares ");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel3.setText("Desarrolladores con Experiencia en:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
+
+        jLabel10.setText("Java pero no Web");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, -1, -1));
+
+        jLabel11.setText("Web y Celulares. No Java");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, -1, -1));
+
+        jTextArea6.setColumns(20);
+        jTextArea6.setRows(5);
+        jScrollPane6.setViewportView(jTextArea6);
+
+        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, -1, 610));
+
+        jLabel12.setText("Web o Celulares. No Java");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel13.setText("Grupo más Grande:");
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 20, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 720, 980, 30));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 2, 40, 330));
     }// </editor-fold>//GEN-END:initComponents
 
     private void hashSetRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hashSetRBActionPerformed
@@ -234,6 +325,18 @@ public class SETGUI extends javax.swing.JPanel {
         jPanel2.setVisible(false);
     }//GEN-LAST:event_jPanel2FocusGained
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Iterator<Desarrollador> itr= desarrolladores.iterator();
+        jInternalFrame2.dispose();
+         while (itr.hasNext()){
+            nombre= itr.next().getNombre();
+            nombres.add(nombre);
+        }
+        
+       
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonContinuar;
@@ -241,16 +344,36 @@ public class SETGUI extends javax.swing.JPanel {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JCheckBox celCB;
     private javax.swing.JRadioButton hashSetRB;
+    private javax.swing.JButton jButton1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JCheckBox javaCB;
     private javax.swing.JRadioButton linkedHashSetRB;
