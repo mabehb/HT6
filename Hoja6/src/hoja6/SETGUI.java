@@ -67,7 +67,7 @@ public class SETGUI extends javax.swing.JPanel {
         celCB = new javax.swing.JCheckBox();
         botonRegistrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        botonResultados = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         grandeTA = new javax.swing.JTextArea();
@@ -110,6 +110,11 @@ public class SETGUI extends javax.swing.JPanel {
 
         buttonGroup2.add(hashSetRB);
         hashSetRB.setText("HashSet");
+        hashSetRB.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                hashSetRBFocusGained(evt);
+            }
+        });
         hashSetRB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hashSetRBActionPerformed(evt);
@@ -119,6 +124,11 @@ public class SETGUI extends javax.swing.JPanel {
 
         buttonGroup2.add(linkedHashSetRB);
         linkedHashSetRB.setText("LinkedHashSet");
+        linkedHashSetRB.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                linkedHashSetRBFocusGained(evt);
+            }
+        });
         linkedHashSetRB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 linkedHashSetRBActionPerformed(evt);
@@ -128,6 +138,11 @@ public class SETGUI extends javax.swing.JPanel {
 
         buttonGroup2.add(treeSetRB);
         treeSetRB.setText("TreeSet");
+        treeSetRB.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                treeSetRBFocusGained(evt);
+            }
+        });
         treeSetRB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 treeSetRBActionPerformed(evt);
@@ -135,6 +150,8 @@ public class SETGUI extends javax.swing.JPanel {
         });
         jPanel2.add(treeSetRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 203, -1, -1));
 
+        botonContinuar.setEnabled(false);
+        botonContinuar.setVisible(false);
         botonContinuar.setText("Continuar");
         botonContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,11 +160,12 @@ public class SETGUI extends javax.swing.JPanel {
         });
         jPanel2.add(botonContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, -1));
 
-        jInternalFrame1.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 350, 310));
+        jInternalFrame1.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 350, 310));
 
-        add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 500, 400));
+        add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 590, 460));
 
         jInternalFrame2.setVisible(true);
+        jInternalFrame2.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -165,12 +183,27 @@ public class SETGUI extends javax.swing.JPanel {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 156, -1, -1));
 
         javaCB.setText("Java");
+        javaCB.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                javaCBFocusGained(evt);
+            }
+        });
         jPanel1.add(javaCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 181, -1, -1));
 
         webCB.setText("Web");
+        webCB.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                webCBFocusGained(evt);
+            }
+        });
         jPanel1.add(webCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 218, -1, -1));
 
         celCB.setText("Celulares");
+        celCB.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                celCBFocusGained(evt);
+            }
+        });
         jPanel1.add(celCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 259, -1, -1));
 
         botonRegistrar.setText("Registrar");
@@ -179,37 +212,26 @@ public class SETGUI extends javax.swing.JPanel {
                 botonRegistrarActionPerformed(evt);
             }
         });
-        jPanel1.add(botonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 110, -1));
+        jPanel1.add(botonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 110, -1));
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 12, 321, 17));
 
-        jButton1.setText("Resultados");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonResultados.setText("Resultados");
+        botonResultados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonResultadosActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
+        jPanel1.add(botonResultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
         jLabel9.setText("Desarrolladores");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 38, -1, -1));
 
-        javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
-        jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
-        jInternalFrame2Layout.setHorizontalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
-        );
-        jInternalFrame2Layout.setVerticalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 30, Short.MAX_VALUE))
-        );
+        jInternalFrame2.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 374, 399));
 
-        add(jInternalFrame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 390, 360));
+        add(jInternalFrame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 390, 440));
 
         grandeTA.setColumns(20);
         grandeTA.setRows(5);
@@ -282,6 +304,10 @@ public class SETGUI extends javax.swing.JPanel {
         desarrolladores=factory.implementacion(eleccion);
         jInternalFrame1.dispose();
         System.out.println("usando implementacion " +eleccion);
+        botonRegistrar.setEnabled(false);
+        botonRegistrar.setVisible(false);
+        botonResultados.setEnabled(false);
+        botonResultados.setVisible(false);
     }//GEN-LAST:event_botonContinuarActionPerformed
 
     private void linkedHashSetRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_linkedHashSetRBActionPerformed
@@ -298,12 +324,14 @@ public class SETGUI extends javax.swing.JPanel {
 
     private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
         // TODO add your handling code here:
+        botonResultados.setEnabled(true);
+        botonResultados.setVisible(true);
         if (javaCB.isSelected()){
             conjunto1=1;
-        }
+            }
         if (webCB.isSelected()){
             conjunto2=1;
-        }
+            }
         if (celCB.isSelected()){
             conjunto3=1;
         }
@@ -319,6 +347,8 @@ public class SETGUI extends javax.swing.JPanel {
         celCB.setSelected(false);
         jTextField1.setText("");
         jLabel6.setText("El desarrollador ha sido registrado");
+        botonRegistrar.setEnabled(false);
+        botonRegistrar.setVisible(false);
     }//GEN-LAST:event_botonRegistrarActionPerformed
 
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
@@ -332,7 +362,7 @@ public class SETGUI extends javax.swing.JPanel {
         jPanel2.setVisible(false);
     }//GEN-LAST:event_jPanel2FocusGained
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botonResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonResultadosActionPerformed
         // TODO add your handling code here:
         //se crean objetos de tipo iterator para contar cada aspecto
         Iterator<Desarrollador> nombres= desarrolladores.iterator();
@@ -422,18 +452,54 @@ public class SETGUI extends javax.swing.JPanel {
                      
         }
          
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonResultadosActionPerformed
+
+    private void javaCBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_javaCBFocusGained
+        // TODO add your handling code here:
+        botonRegistrar.setEnabled(true);
+        botonRegistrar.setVisible(true);
+    }//GEN-LAST:event_javaCBFocusGained
+
+    private void webCBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_webCBFocusGained
+        // TODO add your handling code here:
+        botonRegistrar.setEnabled(true);
+        botonRegistrar.setVisible(true);
+    }//GEN-LAST:event_webCBFocusGained
+
+    private void celCBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_celCBFocusGained
+        // TODO add your handling code here:
+        botonRegistrar.setEnabled(true);
+        botonRegistrar.setVisible(true);
+    }//GEN-LAST:event_celCBFocusGained
+
+    private void hashSetRBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_hashSetRBFocusGained
+        // TODO add your handling code here:
+        botonContinuar.setEnabled(true);
+        botonContinuar.setVisible(true);
+    }//GEN-LAST:event_hashSetRBFocusGained
+
+    private void linkedHashSetRBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_linkedHashSetRBFocusGained
+        // TODO add your handling code here:
+        botonContinuar.setEnabled(true);
+        botonContinuar.setVisible(true);
+    }//GEN-LAST:event_linkedHashSetRBFocusGained
+
+    private void treeSetRBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_treeSetRBFocusGained
+        // TODO add your handling code here:
+        botonContinuar.setEnabled(true);
+        botonContinuar.setVisible(true);
+    }//GEN-LAST:event_treeSetRBFocusGained
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonContinuar;
     private javax.swing.JButton botonRegistrar;
+    private javax.swing.JButton botonResultados;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JCheckBox celCB;
     private javax.swing.JLabel grandeLabel;
     private javax.swing.JTextArea grandeTA;
     private javax.swing.JRadioButton hashSetRB;
-    private javax.swing.JButton jButton1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JLabel jLabel1;
