@@ -40,6 +40,10 @@ public class SETGUI extends javax.swing.JPanel {
     int java;
     int web;
     int celular;
+    int contJava;
+    int contWeb;
+    int contCelular;
+    String javaSubWeb;
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -82,7 +86,7 @@ public class SETGUI extends javax.swing.JPanel {
         wocnojTA = new javax.swing.JTextArea();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        subconjuntoLabel = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -231,6 +235,7 @@ public class SETGUI extends javax.swing.JPanel {
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, 610));
 
+        grandeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         grandeLabel.setText("grupo más grande");
         add(grandeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 60, -1, -1));
 
@@ -260,9 +265,9 @@ public class SETGUI extends javax.swing.JPanel {
         jLabel13.setText("Grupo más Grande:");
         add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 20, -1, -1));
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 720, 980, 30));
+        subconjuntoLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        subconjuntoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(subconjuntoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 720, 1210, 30));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 2, 40, 330));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -329,16 +334,35 @@ public class SETGUI extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        //se crean objetos de tipo iterator para contar cada aspecto
         Iterator<Desarrollador> nombres= desarrolladores.iterator();
         Iterator<Desarrollador> javas= desarrolladores.iterator();
         Iterator<Desarrollador> webs= desarrolladores.iterator();
         Iterator<Desarrollador> celulares= desarrolladores.iterator();
+        //se cierra el frame anterior
         jInternalFrame2.dispose();
+        //se inicializan los contadores de cada conjunto en cer
+        contJava=0;
+        contWeb=0;
+        contCelular=0;
          while (nombres.hasNext()){
             nombre= nombres.next().getNombre();
             java=javas.next().getJava();
             web=webs.next().getWeb();
             celular= celulares.next().getCelulares();
+            
+            //comparaciones para los contadores de los conjuntos
+            if (java==1){
+                contJava++;
+            }
+            if (web==1){
+                contWeb++;
+            }
+            if (celular==1){
+                contCelular++;
+            }
+            
+            //comparaciones para definir los grupos a los que pertenecen los desarrolladores
             if ((java==1)&&(web==1)&&(celular==1)){
                 jwcTA.append(nombre+"\n");
             }
@@ -351,7 +375,53 @@ public class SETGUI extends javax.swing.JPanel {
             if ((java==0)&&((web==1)||(celular==1))){
                 wocnojTA.append(nombre+"\n");
             }
+            
+            if (java==1){
+                if (web==1){
+                    javaSubWeb="El conjunto de desarrolladores Java ES un subconjunto de desarrolladores Web";
+                }
+                else{
+                    javaSubWeb="El conjunto de desarrolladores Java NO ES un subconjunto de desarrolladores Web";
+                }
+            }
         }
+        System.out.println(contJava);
+        System.out.println(contWeb);
+        System.out.println(contCelular);
+        System.out.println(javaSubWeb);
+        subconjuntoLabel.setText(javaSubWeb);
+        //se crea un ultimo grupo de objetos iterator para el resultado del grupo mas grande
+        Iterator<Desarrollador> nombres2= desarrolladores.iterator();
+        Iterator<Desarrollador> javas2= desarrolladores.iterator();
+        Iterator<Desarrollador> webs2= desarrolladores.iterator();
+        Iterator<Desarrollador> celulares2= desarrolladores.iterator();
+         
+        while (nombres2.hasNext()){
+            nombre= nombres2.next().getNombre();
+            java=javas2.next().getJava();
+            web=webs2.next().getWeb();
+            celular= celulares2.next().getCelulares();
+            if ((contJava>=contWeb)&&(contJava>=contCelular)){
+                grandeLabel.setText("Java");
+                if (java==1){
+                    grandeTA.append(nombre+"\n");
+                }
+            }
+            if ((contWeb>=contJava)&&(contWeb>=contCelular)){
+                grandeLabel.setText("Web");
+                if (web==1){
+                    grandeTA.append(nombre+"\n");
+                }
+            }
+            if ((contCelular>=contJava)&&(contCelular>=contWeb)){
+                grandeLabel.setText("Celulares");
+                if (celular==1){
+                    grandeTA.append(nombre+"\n");
+                }
+            }
+                     
+        }
+         
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -371,7 +441,6 @@ public class SETGUI extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -392,6 +461,7 @@ public class SETGUI extends javax.swing.JPanel {
     private javax.swing.JTextArea jnowTA;
     private javax.swing.JTextArea jwcTA;
     private javax.swing.JRadioButton linkedHashSetRB;
+    private javax.swing.JLabel subconjuntoLabel;
     private javax.swing.JRadioButton treeSetRB;
     private javax.swing.JTextArea wcnojTA;
     private javax.swing.JCheckBox webCB;
