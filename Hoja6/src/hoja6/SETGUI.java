@@ -39,7 +39,7 @@ public class SETGUI extends javax.swing.JPanel {
     String nombre;
     int java;
     int web;
-    int celulares;
+    int celular;
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -141,7 +141,7 @@ public class SETGUI extends javax.swing.JPanel {
 
         jInternalFrame1.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 350, 310));
 
-        add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 500, 400));
+        add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 500, 400));
 
         jInternalFrame2.setVisible(true);
 
@@ -205,60 +205,60 @@ public class SETGUI extends javax.swing.JPanel {
                 .addGap(0, 30, Short.MAX_VALUE))
         );
 
-        add(jInternalFrame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 390, 360));
+        add(jInternalFrame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 390, 360));
 
         grandeTA.setColumns(20);
         grandeTA.setRows(5);
         jScrollPane1.setViewportView(grandeTA);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 90, -1, 610));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 90, -1, 610));
 
         wcnojTA.setColumns(20);
         wcnojTA.setRows(5);
         jScrollPane2.setViewportView(wcnojTA);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, 610));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, -1, 610));
 
         jwcTA.setColumns(20);
         jwcTA.setRows(5);
         jScrollPane3.setViewportView(jwcTA);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 610));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 610));
 
         jnowTA.setColumns(20);
         jnowTA.setRows(5);
         jScrollPane4.setViewportView(jnowTA);
 
-        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, 610));
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, 610));
 
         grandeLabel.setText("grupo más grande");
-        add(grandeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 60, -1, -1));
+        add(grandeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 60, -1, -1));
 
         jLabel8.setText("Java, Web y Celulares ");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel3.setText("Desarrolladores con Experiencia en:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
         jLabel10.setText("Java pero no Web");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, -1, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, -1, -1));
 
         jLabel11.setText("Web y Celulares. No Java");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, -1, -1));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, -1, -1));
 
         wocnojTA.setColumns(20);
         wocnojTA.setRows(5);
         jScrollPane6.setViewportView(wocnojTA);
 
-        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, -1, 610));
+        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 90, -1, 610));
 
         jLabel12.setText("Web o Celulares. No Java");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, -1, -1));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 60, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("Grupo más Grande:");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 20, -1, -1));
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 20, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -329,12 +329,28 @@ public class SETGUI extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Iterator<Desarrollador> itr= desarrolladores.iterator();
+        Iterator<Desarrollador> nombres= desarrolladores.iterator();
+        Iterator<Desarrollador> javas= desarrolladores.iterator();
+        Iterator<Desarrollador> webs= desarrolladores.iterator();
+        Iterator<Desarrollador> celulares= desarrolladores.iterator();
         jInternalFrame2.dispose();
-         while (itr.hasNext()){
-            nombre= itr.next().getNombre();
-            System.out.println(nombre);
-            jwcTA.append(nombre+"\n");
+         while (nombres.hasNext()){
+            nombre= nombres.next().getNombre();
+            java=javas.next().getJava();
+            web=webs.next().getWeb();
+            celular= celulares.next().getCelulares();
+            if ((java==1)&&(web==1)&&(celular==1)){
+                jwcTA.append(nombre+"\n");
+            }
+            if ((java==1)&&(web==0)){
+                jnowTA.append(nombre+"\n");
+            }
+            if ((java==0)&&(web==1)&&(celular==1)){
+                wcnojTA.append(nombre+"\n");
+            }
+            if ((java==0)&&((web==1)||(celular==1))){
+                wocnojTA.append(nombre+"\n");
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

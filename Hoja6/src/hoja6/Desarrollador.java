@@ -33,9 +33,9 @@ public class Desarrollador{
         return conjuntos[0];
     }
     public int getWeb(){
-        return conjuntos[0];
+        return conjuntos[1];
     }
     public int getCelulares(){
-        return conjuntos[0];
+        return conjuntos[2];
     }
 }
