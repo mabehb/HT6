@@ -29,7 +29,13 @@ public class Desarrollador{
     public String getNombre(){
         return nombre;
     }
-    public int[] getConjuntos(){
-        return conjuntos;
+    public int getJava(){
+        return conjuntos[0];
+    }
+    public int getWeb(){
+        return conjuntos[0];
+    }
+    public int getCelulares(){
+        return conjuntos[0];
     }
 }

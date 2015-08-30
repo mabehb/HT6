@@ -37,7 +37,9 @@ public class SETGUI extends javax.swing.JPanel {
     int conjunto2;
     int conjunto3;
     String nombre;
-    ArrayList<String> nombres;
+    int java;
+    int web;
+    int celulares;
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -64,20 +66,20 @@ public class SETGUI extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        grandeTA = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        wcnojTA = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        jwcTA = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
-        jLabel7 = new javax.swing.JLabel();
+        jnowTA = new javax.swing.JTextArea();
+        grandeLabel = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea6 = new javax.swing.JTextArea();
+        wocnojTA = new javax.swing.JTextArea();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -205,32 +207,32 @@ public class SETGUI extends javax.swing.JPanel {
 
         add(jInternalFrame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 390, 360));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        grandeTA.setColumns(20);
+        grandeTA.setRows(5);
+        jScrollPane1.setViewportView(grandeTA);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 90, -1, 610));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        wcnojTA.setColumns(20);
+        wcnojTA.setRows(5);
+        jScrollPane2.setViewportView(wcnojTA);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, 610));
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
+        jwcTA.setColumns(20);
+        jwcTA.setRows(5);
+        jScrollPane3.setViewportView(jwcTA);
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 610));
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane4.setViewportView(jTextArea4);
+        jnowTA.setColumns(20);
+        jnowTA.setRows(5);
+        jScrollPane4.setViewportView(jnowTA);
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, 610));
 
-        jLabel7.setText("grupo más grande");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 60, -1, -1));
+        grandeLabel.setText("grupo más grande");
+        add(grandeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 60, -1, -1));
 
         jLabel8.setText("Java, Web y Celulares ");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
@@ -245,9 +247,9 @@ public class SETGUI extends javax.swing.JPanel {
         jLabel11.setText("Web y Celulares. No Java");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, -1, -1));
 
-        jTextArea6.setColumns(20);
-        jTextArea6.setRows(5);
-        jScrollPane6.setViewportView(jTextArea6);
+        wocnojTA.setColumns(20);
+        wocnojTA.setRows(5);
+        jScrollPane6.setViewportView(wocnojTA);
 
         add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, -1, 610));
 
@@ -331,10 +333,9 @@ public class SETGUI extends javax.swing.JPanel {
         jInternalFrame2.dispose();
          while (itr.hasNext()){
             nombre= itr.next().getNombre();
-            nombres.add(nombre);
+            System.out.println(nombre);
+            jwcTA.append(nombre+"\n");
         }
-        
-       
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -343,6 +344,8 @@ public class SETGUI extends javax.swing.JPanel {
     private javax.swing.JButton botonRegistrar;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JCheckBox celCB;
+    private javax.swing.JLabel grandeLabel;
+    private javax.swing.JTextArea grandeTA;
     private javax.swing.JRadioButton hashSetRB;
     private javax.swing.JButton jButton1;
     private javax.swing.JInternalFrame jInternalFrame1;
@@ -358,7 +361,6 @@ public class SETGUI extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -369,16 +371,15 @@ public class SETGUI extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JCheckBox javaCB;
+    private javax.swing.JTextArea jnowTA;
+    private javax.swing.JTextArea jwcTA;
     private javax.swing.JRadioButton linkedHashSetRB;
     private javax.swing.JRadioButton treeSetRB;
+    private javax.swing.JTextArea wcnojTA;
     private javax.swing.JCheckBox webCB;
+    private javax.swing.JTextArea wocnojTA;
     // End of variables declaration//GEN-END:variables
 
 }
