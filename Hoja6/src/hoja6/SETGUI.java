@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
+import java.util.Arrays;
 
 /**
  *
@@ -36,6 +37,8 @@ public class SETGUI extends javax.swing.JPanel {
     int conjunto1;
     int conjunto2;
     int conjunto3;
+    int contador;
+    int i;
     String nombre;
     int java;
     int web;
@@ -44,6 +47,7 @@ public class SETGUI extends javax.swing.JPanel {
     int contWeb;
     int contCelular;
     String javaSubWeb;
+    String[] comparador= new String[100];
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -375,6 +379,9 @@ public class SETGUI extends javax.swing.JPanel {
         contJava=0;
         contWeb=0;
         contCelular=0;
+        for (i=0;i<100;i++){
+            comparador[i]="";
+        }
          while (nombres.hasNext()){
             nombre= nombres.next().getNombre();
             java=javas.next().getJava();
@@ -425,33 +432,48 @@ public class SETGUI extends javax.swing.JPanel {
         Iterator<Desarrollador> javas2= desarrolladores.iterator();
         Iterator<Desarrollador> webs2= desarrolladores.iterator();
         Iterator<Desarrollador> celulares2= desarrolladores.iterator();
-         
+        contador=1;
         while (nombres2.hasNext()){
             nombre= nombres2.next().getNombre();
             java=javas2.next().getJava();
             web=webs2.next().getWeb();
             celular= celulares2.next().getCelulares();
-            if ((contJava>=contWeb)&&(contJava>=contCelular)){
+            if ((contJava>contWeb)&&(contJava>contCelular)){
                 grandeLabel.setText("Java");
                 if (java==1){
-                    grandeTA.append(nombre+"\n");
+                    //grandeTA.append(nombre+"\n");
+                    comparador[contador]=nombre;
                 }
             }
-            if ((contWeb>=contJava)&&(contWeb>=contCelular)){
-                grandeLabel.setText("Web");
-                if (web==1){
-                    grandeTA.append(nombre+"\n");
+            else {
+                if ((contWeb>contJava)&&(contWeb>contCelular)){
+                    grandeLabel.setText("Web");
+                    if (web==1){
+                      //grandeTA.append(nombre+"\n");
+                      comparador[contador]=nombre;
+                    }
+                } 
+                else
+                {
+                    if ((contCelular>contJava)&&(contCelular>contWeb)){
+                        grandeLabel.setText("Celulares");
+                        if (celular==1){
+                            //grandeTA.append(nombre+"\n");
+                            comparador[contador]=nombre;
+                        }
+                    }
+                    else grandeLabel.setText("No hay un grupo mas grande");
                 }
-            }
-            if ((contCelular>=contJava)&&(contCelular>=contWeb)){
-                grandeLabel.setText("Celulares");
-                if (celular==1){
-                    grandeTA.append(nombre+"\n");
-                }
-            }
-                     
+            }  
+            contador=contador+1;
         }
-         
+        System.out.println(comparador[contador-1]);
+        Arrays.sort(comparador);
+        for (String str:comparador){
+            if (str != ""){
+                grandeTA.append(str+"\n");
+            }
+        }     
     }//GEN-LAST:event_botonResultadosActionPerformed
 
     private void javaCBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_javaCBFocusGained
